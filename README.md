@@ -16,3 +16,9 @@ Disclaimer: Built for educational purpose only.
 - Netflix GPT
     - Search bar
     - Movie Suggestions
+
+### Project installation & dependencies
+
+- `npx create-react-app netflix-gpt`
+- Configure [Tailwind](https://tailwindcss.com/docs/guides/create-react-app)
+- `npm i -D react-router-dom`
