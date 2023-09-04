@@ -4,7 +4,7 @@ A Netflix GPT is a clone of Netflix
 
 Disclaimer: Built for educational purpose only.
 
-### App Features
+### Features
 - Login/Signup
 - Browse (after authentication)
     - Header
