@@ -1,6 +1,13 @@
+import { useState } from "react";
 import Header from "./Header";
 
 const Login = () => {
+  const [isSignInForm, setIsSignInForm] = useState(true);
+
+  const toggleSignInForm = () => {
+    setIsSignInForm(!isSignInForm);
+  };
+
   return (
     <div>
       <Header />
@@ -10,25 +17,38 @@ const Login = () => {
           alt="login_bg"
         />
       </div>
-      <form className="absolute p-12 bg-black top-1/4 left-1/3 opacity-90 flex flex-col">
-        <label className="text-left font-bold text-white text-3xl pb-8">
-          Sign In
-        </label>
+      <form className="absolute p-12 bg-black top-20 left-1/3 bg-opacity-90 flex flex-col">
+        <h1 className="text-left font-bold text-white text-3xl pb-8">
+          {isSignInForm ? "Sign In" : "Sign Up"}
+        </h1>
         <input
           type="text"
           placeholder="Email or phone number"
           className="p-3 m-3 w-80 rounded-lg bg-stone-800 text-white"
         />
+        { !isSignInForm && <input
+          type="text"
+          placeholder="Full name"
+          className="p-3 m-3 w-80 rounded-lg bg-stone-800 text-white"
+        />}
         <input
           type="password"
           placeholder="Password"
-          className="p-3 m-3 w-80 rounded-lg bg-stone-800 text-sm text-white"
+          className="p-3 m-3 w-80 rounded-lg bg-stone-800 text-white"
         />
-        <button className="p-3 m-3 w-80 rounded-lg font-bold bg-red-600 text-white">
-          Sign In
+        <button className="p-3 m-3 w-80 rounded-lg font-medium bg-red-600 text-white">
+          {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
 
-        <p className="py-4 text-white text-center">New to Netflix ? Sign up now</p>
+        <p className="py-4 m-3 text-stone-500 m-3">
+          {isSignInForm ? "New to Netflix ? " : "Already a user ? "}
+          <span
+            className="hover:underline hover:cursor-pointer font-medium text-white"
+            onClick={toggleSignInForm}
+          >
+            {isSignInForm ? "Sign up now" : "Sign in now"}
+          </span>.
+        </p>
       </form>
     </div>
   );
