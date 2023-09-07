@@ -22,3 +22,4 @@ Disclaimer: Built for educational purpose only.
 - `npx create-react-app netflix-gpt`
 - Configure [Tailwind](https://tailwindcss.com/docs/guides/create-react-app)
 - `npm i -D react-router-dom`
+- Install & setup [Firebase](https://firebase.google.com/)
