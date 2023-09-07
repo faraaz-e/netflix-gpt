@@ -1,6 +1,11 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { validateData } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -18,6 +23,44 @@ const Login = () => {
       password.current.value
     ); // args received from useRef Hook
     setError(errorMessage);
+
+    if (errorMessage) return;
+
+    if (!isSignInForm) {
+      // Sign Up
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setError(errorCode + "-" + errorMessage);
+          // ..
+        });
+    } else {
+      // Sign in
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    }
   };
 
   const toggleSignInForm = () => {
@@ -79,6 +122,9 @@ const Login = () => {
             {isSignInForm ? "Sign up now" : "Sign in now"}
           </span>
           .
+        </p>
+        <p className="py-4 m-3 text-stone-500 m-3 text-sm">
+          Disclaimer: This App is for educational purpose only.
         </p>
       </form>
     </div>
