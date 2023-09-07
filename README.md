@@ -23,3 +23,5 @@ Disclaimer: Built for educational purpose only.
 - Configure [Tailwind](https://tailwindcss.com/docs/guides/create-react-app)
 - `npm i -D react-router-dom`
 - Install & setup [Firebase](https://firebase.google.com/)
+- `npm i -D @reduxjs/toolkit`
+- `npm i react-redux`
