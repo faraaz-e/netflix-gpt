@@ -10,7 +10,7 @@ const useMovieTrailer = () => {
   const getMovieVideos = async () => {
     //   const data = await fetch("API_URL");
     //   const jsonData = await data.json();
-    const trailer = "ct_w6Ne4-IQ";
+    const trailer = "3dm-AFKUmFw";
     // setTrailerKey(trailer);
     dispatch(addTrailerVideo(trailer));
   };
