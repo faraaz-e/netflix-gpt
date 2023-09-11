@@ -5,17 +5,15 @@ import VideoBackground from "./VideoBackground";
 const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   if (movies === null) return;
-  const mainMovie = movies[78];
+  const mainMovie = movies[234];
   console.log(mainMovie);
   const { name, summary } = mainMovie;
 
   return (
-    <>
-      <div>
-        <VideoTitle title={name} overview={summary} />
-        <VideoBackground />
-      </div>
-    </>
+    <div>
+      <VideoTitle title={name} overview={summary} />
+      <VideoBackground />
+    </div>
   );
 };
 
