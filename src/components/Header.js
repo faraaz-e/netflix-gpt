@@ -60,7 +60,7 @@ const Header = () => {
         <div className="flex items-center">
           <img src={user?.photoURL} alt="usericon" className="h-10" />
           <button
-            className="text-red-600 font-bold px-4"
+            className="text-white px-4 hover:underline"
             onClick={handleSignOut}
           >
             Sign Out
