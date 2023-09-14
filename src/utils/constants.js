@@ -11,3 +11,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "en", name: "English" },
   { identifier: "hindi", name: "Hindi" },
 ];
+
+export const OPENAI_KEY = "YOUR_API_KEY";
