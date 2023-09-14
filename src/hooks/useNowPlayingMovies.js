@@ -8,7 +8,6 @@ const useNowPlayingMovies = () => {
   const getNowPlayingMovies = async () => {
     const data = await fetch("https://api.tvmaze.com/shows?page=1");
     const jsonData = await data.json();
-    console.log(jsonData);
     dispatch(addNowPlayingMovies(jsonData));
   };
 
