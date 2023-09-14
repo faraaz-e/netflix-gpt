@@ -25,3 +25,4 @@ Disclaimer: Built for educational purpose only.
 - Install & setup [Firebase](https://firebase.google.com/)
 - `npm i -D @reduxjs/toolkit`
 - `npm i react-redux`
+- `npm i --save openai`
